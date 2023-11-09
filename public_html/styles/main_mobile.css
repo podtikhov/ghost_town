@@ -1,0 +1,447 @@
+@font-face {
+    font-family: AcuminBlack;
+    src: url("../fonts/AcuminProBlack.otf");
+}
+
+@font-face {
+    font-family: AcuminSamibold;
+    src: url("../fonts/AcuminProSemibold.otf");
+}
+
+@font-face {
+    font-family: AcuminMedium;
+    src: url("../fonts/AcuminProMedium.otf");
+}
+
+@media (max-width: 1200px) {
+    body, html {
+        overflow-x: hidden;
+    }
+
+    #banner{
+        display: none;
+    }
+
+    #banner_mobile{
+        display: block;
+        background-color: #163150;
+        width: 100%;
+        height: 790px;
+        position: absolute;
+        z-index: 0;
+        overflow: hidden;
+        -webkit-overflow: hidden;
+    }
+
+    #content_abs_container {
+        top: 785px;
+    }
+
+    #social_networks_flex_container {
+        display: none;
+    }
+
+    #social_networks_abs_containe_mobile {
+        position: absolute;
+        top: 60px;
+        width: 100%;
+    }
+
+
+    #social_networks_flex_containe_mobile {
+        display: flex;
+        justify-content: center;
+    }
+
+    .social_networks_img {
+        width: 32px;
+        height: 30px;
+    }
+
+    #sitename_abs_container_mobile {
+        position: absolute;
+        width: 100%;
+        top: 122px;
+    }
+
+    #sitename_flex_container_mobile {
+        display: flex;
+        justify-content: center;
+    }
+
+    #sitename_flex_container2_mobile {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #sitename {
+        font-size: 48px;
+        text-align: center;
+    }
+
+    #under_sitename_text {
+        text-align: center;
+        font-size: 14px;
+        margin-top: 0px;
+    }
+
+    #sky_abs_container_mobile {
+        position: absolute;
+        width: 100%;
+        top: 315px
+    }
+
+    #sky_flex_container_mobile {
+        display: flex;
+        justify-content: center;
+    }
+
+    #sky_mobile {
+        width: 580px;
+        height: 214px;
+    }
+
+    #field_abs_container_mobile {
+        position: absolute;
+        width: 100%;
+        top: 493px;
+    }
+
+    #field_flex_container_mobile {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #field_mobile {
+        background-image: url("../img/mobile/field_big.png");
+        background-size: 375px 92.62px;
+        width: 100%;
+        height: 91px;
+    }
+
+    #green_block {
+        background-color: #00E377;
+        width: 100%;
+        height: 212px;
+    }
+
+    #graves_abs_container_mobile {
+        position: absolute;
+        width: 100%;
+        top: 390px;
+        z-index: 2;
+    }
+
+    #graves_flex_container_mobile {
+        display: flex;
+        justify-content: center;
+        z-index: 1;
+    }
+
+    #graves_mobile {
+        width: 755px;
+        height: 282px;
+    }
+
+    #plate_abs_container_mobile {
+        position: absolute;
+        width: 100%;
+        top: 370px;
+        z-index: 5;
+    }
+
+    #plate_flex_container_mobile {
+        display: flex;
+        justify-content: center;
+    }
+
+    #plate_mobile {
+        width: 148px;
+        height: 169px; 
+        cursor: pointer;
+    }
+
+    #ghost_small_container_mobile {
+        position: absolute;
+        top: 331px;
+        z-index: 0;
+    }
+
+    #ghost_small_img_mobile {
+        width: 56px;
+        height: 78px;
+    }
+
+    #ghost_middle_container_mobile {
+        position: absolute;
+        top: 396px;
+        z-index: 1;
+    }
+
+    #ghost_middle_img_mobile {
+        width: 87px;
+        top: 121px;
+        transform: scale(-1, 1);
+    }
+
+    #ghost_big_container_mobile {
+        position: absolute;
+        top: 540px;
+        z-index: 3;
+    }
+
+    #ghost_big_img_mobile {
+        width: 138px;
+        height: 195px;
+    }
+
+    /*#sitename_abs_container {
+    }
+
+    #sitename {
+        font-size: 48px;
+        text-align: center;
+        padding-top: 30px;
+    }
+
+    #under_sitename_text {
+        text-align: center;
+        font-size: 14px;
+        
+    }
+
+    #plate_abs_container {
+        top: 294px;
+    }
+
+    #plate {
+        width: 178px;
+        height: 213px;
+    }*/
+
+    #history_flex_container {
+        display: flex;
+        justify-content: center;
+    }
+
+    #history {
+        background-image: url("../img/history_bg.png");
+        flex-basis: auto;
+        word-wrap: break-word;
+        width: 100%;
+        max-width: 800px;
+        height: auto;
+        justify-content: center;
+    }
+    
+    #history_text {
+        width: auto;
+        padding: 20px 20px 40px 20px;
+    }
+    
+    #history_text p{
+        font-family: AcuminSamibold;
+        font-size: 16px;
+    }
+    
+    .history_for_bg {
+        
+        background-image: url("../img/history_bg.png");
+        flex-grow: 1;
+    }
+
+    #two_buttons_flex_container {
+        display: flex;
+        justify-content: center;
+        padding: 30px 0 30px 0;
+    }
+
+    #roadmap_graves_flex_container {
+        display: none;
+    }
+
+    #lines_flex_container {
+        display: none;
+    }
+
+    #grave_card_description_flex_container {
+        display: none;
+    }
+
+    #cars_row_1 {
+        text-align: center;
+    }
+
+    #cars_row_2 {
+        text-align: center;
+    }
+
+    #questions_container {
+        width: auto;
+        color: white;
+        margin-bottom: 100px;
+        padding: 20px;
+        transition-duration: 0.5s;
+    }
+    
+    .question_section {
+        border-bottom: 2px solid white; 
+        cursor: pointer;
+    }
+    
+    .question {
+        font-family: AcuminBlack;
+        font-size: 18px;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 10px 10px 10px;
+        align-items: flex-start;
+    }
+    
+    .question_head {
+        padding-right: 20px;
+    }
+    
+    .faq_section_arrow {
+        transition-duration: 0.5s;
+    }
+    
+    .answer {
+        font-family: AcuminMedium;
+        font-size: 18px;
+        padding: 10px 10px 20px 10px;
+        text-indent: 30px;
+    }
+
+    .head {
+        font-size: 40px;
+    }
+
+    #roadmap_mobile_container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .roadmap_mobile_section_right {
+        width: 350px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .roadmap_mobile_section_left {
+        width: 350px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .roadmap_mobile_text {
+        padding: 0px 20px 0 20px;
+    }
+
+    .roadmap_mobile_text_head {
+        font-family: AcuminBlack;
+        font-size: 16px;
+    }
+
+    .roadmap_mobile_text_description {
+        font-family: Roboto;
+        font-size: 300;
+        font-size: 12px;
+    }
+
+    /*--------------------------------*/
+
+    @keyframes scroll {
+        100% {
+        transform: translateX(0);
+        }
+        0% {
+        transform: translateX(calc(-300px * 7));
+        }
+    }
+    .slider {
+        background: #00E377;
+        height: 300px;
+        margin: auto;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+    }
+    /*.slider::before, .slider::after {
+        background: linear-gradient(to right, #00E377 0%, rgba(255, 255, 255, 0) 100%);
+        content: "";
+        height: 300px;
+        position: absolute;
+        width: 250px;
+        z-index: 2;
+    }
+    .slider::after {
+        right: 0;
+        top: 0;
+        transform: rotateZ(180deg);
+    }
+    .slider::before {
+        left: 0;
+        top: 0;
+    }*/
+    .slider .slide-track {
+        animation: scroll 30s linear infinite;
+        display: flex;
+        width: calc(300px * 14);
+    }
+    .slider .slide {
+        height: 300px;
+        width: 300px;
+    }
+
+    .slide img{
+        width: 300px;
+        height: 300px;
+    }
+
+    /*------------------------------------*/
+
+    .team_cards {
+        width: 300px;
+        height: 173px;
+    }
+
+    #under_roadmap_text_flex_container {
+    }
+    
+    #under_roadmap_text {
+        font-size: 12px;
+        font-family: AcuminMedium;
+        opacity: 1;
+        padding: 5px;
+    }
+
+    .buttons {
+        margin-bottom: 13px;
+    }
+
+    #under_history_flex_container {
+        display: none;
+    }
+
+    /*#score_button {
+        width: 140px;
+        height: 36px;
+        align-items: center;
+    }
+
+    #right_arrow{
+        width: 16px;
+    }
+
+    #left_arrow{
+        width: 16px;;
+    }
+
+    #score_button input{
+        width: 100px;
+    }*/
+}
+

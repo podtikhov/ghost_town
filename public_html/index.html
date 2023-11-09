@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Slandy Ghosts</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/ico">
+
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/main_mobile.css">
+    <link rel="stylesheet" href="./libs/wow_js/animate.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta content='true' name='HandheldFriendly' />
+    <meta content='width' name='MobileOptimized' />
+</head>
+
+<body>
+    <div id="score_button_abs_container">
+        <div id="score_button_flex_container">
+            <div id="score_button">
+                <img src="./img/arrow.svg" id="left_arrow" onclick="dec_score()">
+
+                <form>
+                    <!--div id="score">1</div-->
+                    <input type="number" value="1" min="1" max="20" id="score_input" onblur="check_score()"
+                        onKeyPress="prevent_input_of_symbols()">
+                </form>
+
+                <img src="./img/arrow.svg" id="right_arrow" onclick="inc_score()">
+            </div>
+        </div>
+    </div>
+
+    <div id="banner">
+        <div id="sky_abs_container">
+            <div id="sky_flex_container">
+                <img src="./img/sky.png" id="sky">
+            </div>
+        </div>
+
+        <div id="field_abs_container">
+            <div id="field_flex_container">
+                <div id="field"></div>
+            </div>
+        </div>
+
+        <div id="graves_abs_container">
+            <div id="graves_flex_container">
+                <img src="./img/graves.png" id="graves">
+            </div>
+        </div>
+
+        <div id="plate_abs_container">
+            <div id="plate_flex_container">
+                <a href=""><img src="./img/plate.png" id="plate"></a>
+            </div>
+        </div>
+
+        <div id="sitename_abs_container">
+            <div id="sitename_flex_container">
+                <div id="sitename_flex_container2" class="wow bounceIn">
+                    <div id="sitename">GHOST TOWN</div>
+
+                    <div id="under_sitename_text">
+                        <span>0</span>/5000 GHOSTS WAITING TO BE SET FREE
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <marquee id="ghost_small_container" behavior="scroll" direction="right" scrolldelay="0.1" scrollamount="2">
+            <img src="./img/ghosts/ghost_base.png" id="ghost_small_img">
+        </marquee>
+
+        <marquee id="ghost_middle_container" behavior="scroll" direction="left" scrolldelay="0.1" scrollamount="5">
+            <img src="./img/ghosts/ghost_base.png" id="ghost_middle_img">
+        </marquee>
+
+        <marquee id="ghost_big_container" behavior="scroll" direction="right" scrolldelay="0.1" scrollamount="10">
+            <img src="./img/ghosts/ghost_base.png" id="ghost_big_img">
+        </marquee>
+    </div>
+
+    <div id="banner_mobile">
+        <div id="social_networks_abs_containe_mobile">
+            <div id="social_networks_flex_containe_mobile">
+                <a href="https://discord.gg/MQ6P3zQn">
+                    <img class="social_networks_img" src="./img/social_networks/discord.png">
+                </a>
+
+                <a href="#">
+                    <img class="social_networks_img" src="./img/social_networks/instagram.png">
+                </a>
+
+                <a href="https://twitter.com/SlandyGhost">
+                    <img class="social_networks_img" src="./img/social_networks/twitter.png">
+                </a>
+            </div>
+        </div>
+
+        <div id="sitename_abs_container_mobile">
+            <div id="sitename_flex_container_mobile">
+                <div id="sitename_flex_container2_mobile" class="wow bounceIn">
+                    <div id="sitename">GHOST TOWN</div>
+
+                    <div id="under_sitename_text">
+                        <span>0</span>/5000 GHOSTS WAITING TO BE SET FREE
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="sky_abs_container_mobile">
+            <div id="sky_flex_container_mobile">
+                <img src="./img/sky.png" id="sky_mobile">
+            </div>
+        </div>
+
+        <div id="field_abs_container_mobile">
+            <div id="field_flex_container_mobile">
+                <div id="field_mobile"></div>
+                <div id="green_block"></div>
+            </div>
+        </div>
+
+        <div id="graves_abs_container_mobile">
+            <div id="graves_flex_container_mobile">
+                <img src="./img/graves.png" id="graves_mobile">
+            </div>
+        </div>
+
+        <div id="plate_abs_container_mobile">
+            <div id="plate_flex_container_mobile">
+                <a href="">
+                    <img src="./img/plate.png" id="plate_mobile">
+                </a>
+            </div>
+        </div>
+
+        <marquee id="ghost_small_container_mobile" behavior="scroll" direction="right" scrolldelay="0.1"
+            scrollamount="2">
+            <img src="./img/ghosts/ghost_base.png" id="ghost_small_img_mobile">
+        </marquee>
+
+        <marquee id="ghost_middle_container_mobile" behavior="scroll" direction="left" scrolldelay="0.1"
+            scrollamount="5">
+            <img src="./img/ghosts/ghost_base.png" id="ghost_middle_img_mobile">
+        </marquee>
+
+        <marquee id="ghost_big_container_mobile" behavior="scroll" direction="right" scrolldelay="0.1"
+            scrollamount="10">
+            <img src="./img/ghosts/ghost_base.png" id="ghost_big_img_mobile">
+        </marquee>
+    </div>
+
+    <div id="content_abs_container">
+        <div id="social_networks_flex_container">
+            <a href="#">
+                <img class="social_networks_img" src="./img/social_networks/discord.png">
+            </a>
+
+            <a href="#">
+                <img class="social_networks_img" src="./img/social_networks/instagram.png">
+            </a>
+
+            <a href="#">
+                <img class="social_networks_img" src="./img/social_networks/twitter.png">
+            </a>
+        </div>
+
+        <div id="history_flex_container">
+            <div class="history_for_bg"></div>
+
+            <div id="history">
+                <div id="history_text" class="wow fadeInLeft">
+                    <p>
+                        Have you ever felt like a ghost, dead in the world of the living? A wandering soul, not finding
+                        peace? This was experienced by each of us: the feeling that you need to die to resurrect; change
+                        the picture and circumstances to feel the air of freedom. One person was so eager to create and
+                        build that he undergone mental death to create this collectibles.
+                    </p>
+
+                    <p>
+                        The author of the "Slandy Ghost Town" - Gonzales, comes from a mountainous village of a country
+                        with traditional eastern society, where the role of a woman is strictly determined by local
+                        traditions for lifetime.
+                    </p>
+
+                    <p>
+                        We won't disclose the identity of the artist for safety reason. But this you should know - she
+                        had to become a ghost for the society and traditions in which she grew up in order to create her
+                        own reality.
+                    </p>
+
+                    <p>This collection is not about death, but about a new life in which everyone can find himself.</p>
+
+                    <p>
+                        What will you do if we tell you that there are 5.000 ghosts just like Slandy Gonzales, who are
+                        awaiting for the moment when they will be released.
+                    </p>
+
+                    <p>
+                        Free yourself.<br>
+                        And release Slandy.<br>
+                        Excited?<br>
+                        Just like we are!<br>
+                        We are sure that you know some of them.<br>
+                        Find your Slandy.<br>
+                        Keep on.<br>
+                        Press the "set free" button to release another ghost!
+                    </p>
+                </div>
+            </div>
+
+            <div class="history_for_bg"></div>
+        </div>
+
+        <div id="under_history_flex_container">
+            <div class="under_history_for_bg"></div>
+            <div id="under_history"></div>
+            <div class="under_history_for_bg"></div>
+        </div>
+
+        <div id="two_buttons_flex_container">
+            <img src="./img/buttons/roadmap.svg" id="roadmap_button" class="buttons" onclick="scroll_to(roadmap_head)">
+            <img src="./img/buttons/faq.svg" id="faq_button" class="buttons" onclick="scroll_to(faq_flex_container)">
+        </div>
+
+        <div id="gallery_flex_container">
+            <div id="gallery_flex_container2">
+                <div id="gallery_head" class="head">GALLERY</div>
+
+                <div class="slider">
+                    <div class="slide-track">
+                        <div class="slide">
+                            <img src="./img/ghosts/slider/ghost_1.png" />
+                        </div>
+
+                        <div class="slide">
+                            <img src="./img/ghosts/slider/ghost_2.png" />
+                        </div>
+
+                        <div class="slide">
+                            <img src="./img/ghosts/slider/ghost_3.png" />
+                        </div>
+
+                        <div class="slide">
+                            <img src="./img/ghosts/slider/ghost_4.png" />
+                        </div>
+
+                        <div class="slide">
+                            <img src="./img/ghosts/slider/ghost_5.png" />
+                        </div>
+
+                        <div class="slide">
+                            <img src="./img/ghosts/slider/ghost_6.png" />
+                        </div>
+
+                        <div class="slide">
+                            <img src="./img/ghosts/slider/ghost_7.png" />
+                        </div>
+
+                        <div class="slide">
+                            <img src="./img/ghosts/slider/ghost_1.png" />
+                        </div>
+
+                        <div class="slide">
+                            <img src="./img/ghosts/slider/ghost_2.png" />
+                        </div>
+
+                        <div class="slide">
+                            <img src="./img/ghosts/slider/ghost_3.png" />
+                        </div>
+
+                        <div class="slide">
+                            <img src="./img/ghosts/slider/ghost_4.png" />
+                        </div>
+
+                        <div class="slide">
+                            <img src="./img/ghosts/slider/ghost_5.png" />
+                        </div>
+
+                        <div class="slide">
+                            <img src="./img/ghosts/slider/ghost_6.png" />
+                        </div>
+
+                        <div class="slide">
+                            <img src="./img/ghosts/slider/ghost_7.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="roadmap_flex_container">
+            <div id="roadmap_flex_container2">
+                <div id="roadmap_head" class="head">ROADMAP</div>
+
+                <div id="roadmap_graves_flex_container" class="wow fadeIn">
+                    <img percent="0" src="./img/roadmap/graves/roadmap_0.png" class="roadmap_grave_img"
+                        onmouseover="show_roadmap_sections(this)">
+                    <img percent="25" src="./img/roadmap/graves/roadmap_25.png" class="roadmap_grave_img"
+                        onmouseover="show_roadmap_sections(this)">
+                    <img percent="50" src="./img/roadmap/graves/roadmap_50.png" class="roadmap_grave_img"
+                        onmouseover="show_roadmap_sections(this)">
+                    <img percent="75" src="./img/roadmap/graves/roadmap_75.png" class="roadmap_grave_img"
+                        onmouseover="show_roadmap_sections(this)">
+                    <img percent="100" src="./img/roadmap/graves/roadmap_100.png" class="roadmap_grave_img"
+                        onmouseover="show_roadmap_sections(this)">
+                </div>
+
+                <div id="roadmap_mobile_container">
+                    <div class="roadmap_mobile_section_right">
+                        <div class="roadmap_mobile_text wow fadeInLeft">
+                            <div class="roadmap_mobile_text_head"></div>
+
+                            <div class="roadmap_mobile_text_description">
+                                111 Slandy-ghosts will be given away, granted and raffled on Twitter and Discord. You
+                                have all chances to win one or more of unique
+                                NTF-Slandys!
+                            </div>
+                        </div>
+                        <img src="./img/roadmap/mobile/grave_0.svg" class="roadmap_mobie_img_right">
+                    </div>
+
+                    <div class="roadmap_mobile_section_left">
+                        <img src="./img/roadmap/mobile/grave_25.svg" class="roadmap_mobie_img_left">
+
+                        <div class="roadmap_mobile_text wow fadeInRight">
+                            <div class="roadmap_mobile_text_head"></div>
+
+                            <div class="roadmap_mobile_text_description">
+                                We will grant 1 ETH and raffle 5 rare Slandy
+                                ghosts among Slandy holders. Actively participate in all events and win prizes! It's
+                                about the right time to think how you gonna spend ETH you'll win!
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="roadmap_mobile_section_right">
+                        <div class="roadmap_mobile_text wow fadeInLeft">
+                            <div class="roadmap_mobile_text_head"></div>
+
+                            <div class="roadmap_mobile_text_description">
+                                We will grant 2 ETH and raffle 10 more rare
+                                unique among Slandy holders. At this stage we are opening access only for holders to the
+                                SlandyDandy Game - give your soul a second life to live!
+                            </div>
+                        </div>
+
+                        <img src="./img/roadmap/mobile/grave_50.svg" class="roadmap_mobie_img_right">
+                    </div>
+
+                    <div class="roadmap_mobile_section_left">
+                        <img src="./img/roadmap/mobile/grave_75.svg" class="roadmap_mobie_img_left">
+
+                        <div class="roadmap_mobile_text wow fadeInRight">
+                            <div class="roadmap_mobile_text_head"></div>
+
+                            <div class="roadmap_mobile_text_description">
+                                We will grant 3 ETH and 5 unique Corrupted
+                                Covetous Souls Cards that give 0.5% lifetime revenue from all resales of our collectible
+                                for it's holders! And also we'll announce new nextgen Top Secret project and launch it
+                                the day it will be announced.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="roadmap_mobile_section_right">
+                        <div class="roadmap_mobile_text wow fadeInLeft">
+                            <div class="roadmap_mobile_text_head"></div>
+
+                            <div class="roadmap_mobile_text_description">
+                                5 ETH will be donated to a non-profit
+                                organization abusevictimfund.org who provide online support to women abused, living in
+                                isolated, rural areas with no local specialists or organizations they could turn for
+                                help.
+                            </div>
+                        </div>
+
+                        <img src="./img/roadmap/mobile/grave_100.svg" class="roadmap_mobie_img_right">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="lines_flex_container">
+            <div id="lines_sections_for_bg_left"></div>
+
+            <div id="lines_sections">
+                <img percent="0" src="./img/roadmap/lines/orange/line_section_orange.svg" class="with_circle"
+                    style="z-index: 6;">
+                <img percent="25" src="./img/roadmap/lines/grey/line_section.svg" class="lines with_circle"
+                    style="z-index: 5;" onmouseover="show_roadmap_sections(this)">
+                <img percent="50" src="./img/roadmap/lines/grey/line_section.svg" class="lines with_circle"
+                    style="z-index: 4;" onmouseover="show_roadmap_sections(this)">
+                <img percent="75" src="./img/roadmap/lines/grey/line_section.svg" class="lines with_circle"
+                    style="z-index: 3;" onmouseover="show_roadmap_sections(this)">
+                <img percent="100" src="./img/roadmap/lines/grey/line_section.svg" class="lines with_circle"
+                    style="z-index: 2;" onmouseover="show_roadmap_sections(this)">
+                <img index="5" src="./img/roadmap/lines/grey/line_section_wthout_circle.svg" class="lines"
+                    id="line_without_circle" style="z-index: 1;">
+            </div>
+
+            <div id="lines_sections_for_bg_right"></div>
+        </div>
+
+        <div id="grave_card_description_flex_container">
+            <div id="grave_card_description_flex_container_2">
+                <div percent="0" class="garve_card_description" style="opacity: 1;">
+                    <div class="card_head"></div>
+
+                    <div class="card_description">
+                        111 Slandy-ghosts will be given away, granted and raffled on Twitter
+                        and Discord. You have all chances to win one or more of unique NTF-Slandys!
+                    </div>
+                </div>
+
+                <div percent="25" class="garve_card_description">
+                    <div class="card_head"></div>
+
+                    <div class="card_description">
+                        We will grant 1 ETH and raffle 5 rare Slandy ghosts among Slandy
+                        holders. Actively participate in all events and win prizes! It's about the right time to think
+                        how you gonna spend ETH you'll win!
+                    </div>
+                </div>
+
+                <div percent="50" class="garve_card_description">
+                    <div class="card_head"></div>
+
+                    <div class="card_description">
+                        We will grant 2 ETH and raffle 10 more rare unique among Slandy
+                        holders. At this stage we are opening access only for holders to the SlandyDandy Game - give
+                        your soul a second life to live!
+                    </div>
+                </div>
+
+                <div percent="75" class="garve_card_description">
+                    <div class="card_head"></div>
+
+                    <div class="card_description">
+                        We will grant 3 ETH and 5 unique Corrupted Covetous Souls Cards that
+                        give 0.5% lifetime revenue from all resales of our collectible for it's holders! And also we'll
+                        announce new nextgen Top Secret project and launch it the day it will be announced.
+                    </div>
+                </div>
+
+                <div percent="100" class="garve_card_description">
+                    <div class="card_head"></div>
+
+                    <div class="card_description">
+                        5 ETH will be donated to a non-profit organization abusevictimfund.org
+                        who provide online support to women abused, living in isolated, rural areas with no local
+                        specialists or organizations they could turn for help.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="under_roadmap_text_flex_container">
+            <div id="under_roadmap_text">
+                We will also open online and physical store. An amazing world of items that Slandy and we are dreaming
+                about.
+                <br>
+                Stay tuned! Dream on! Reach while you're alive.
+            </div>
+        </div>
+
+        <div id="team_flex_container">
+            <div id="team_flex_container2">
+                <div id="team_head" class="head">TEAM</div>
+
+                <div id="cars_row_1" class="wow fadeIn">
+                    <img src="./img/team_cards/gonzales_card.svg" class="team_cards">
+                    <img src="./img/team_cards/caesar_card.svg" class="team_cards">
+                </div>
+
+                <div id="cars_row_2" class="wow fadeIn">
+                    <img src="./img/team_cards/john_doe_card.svg" class="team_cards">
+                    <img src="./img/team_cards/cargo_card.svg" class="team_cards">
+                </div>
+            </div>
+        </div>
+
+        <div id="faq_flex_container">
+            <div id="faq_flex_container2">
+                <div id="faq_head" class="head">FAQ</div>
+
+                <div id="questions_container">
+                    <div class="question_section">
+                        <div class="question" onclick="show_answer(this)">
+                            <div class="question_head">WHAT'S GHOST TOWN?</div>
+                            <div class="faq_section_arrow">V</div>
+                        </div>
+
+                        <div class="answer" style="display: none;">
+                            Limbo? Purgatory or kingdom of Hades? heaven or Hell?
+                            And maybe it's just the Black Hole is space where the physical body turns into Ethereum?
+                            Probably our ghosts are regenerating combining in itself the most important from the past
+                            and the best from the future, features and habits of each other. We don't know that. But we
+                            are sure that death is not the end. It's the beginning/ Beginning of new era of the link
+                            between the living and the dead. Between real and virtual. Between yesterday and tomorrow
+                            that is happening right now. There are 5000 of them. They are almost here. They are almost
+                            with us. But for now bound in shackles for the judgement day in which you could free your
+                            hero.
+                        </div>
+                    </div>
+
+                    <div class="question_section">
+                        <div class="question" onclick="show_answer(this)">
+                            <div class="question_head">HOW MUCH DOES A GHOST COST?</div>
+                            <div class="faq_section_arrow">V</div>
+                        </div>
+
+                        <div class="answer" style="display: none;">0,045 ETH.</div>
+                    </div>
+
+                    <div class="question_section">
+                        <div class="question" onclick="show_answer(this)">
+                            <div class="question_head">WHEN WILL THE GHOSTS BREAK FREE?</div>
+                            <div class="faq_section_arrow">V</div>
+                        </div>
+
+                        <div class="answer" style="display: none;">Release is scheduled January 11th.</div>
+                    </div>
+
+                    <div class="question_section">
+                        <div class="question" onclick="show_answer(this)">
+                            <div class="question_head">WHAT CAN I DO WHITH MY GHOST?</div>
+                            <div class="faq_section_arrow">V</div>
+                        </div>
+
+                        <div class="answer" style="display: none;">You can do whatever you like until you are alive.
+                        </div>
+                    </div>
+
+                    <div class="question_section">
+                        <div class="question" onclick="show_answer(this)">
+                            <div class="question_head">DO YOU HAVE ANY PLANS FOR MORE CHARACTERS CREATION?</div>
+                            <div class="faq_section_arrow">V</div>
+                        </div>
+
+                        <div class="answer" style="display: none;">
+                            The ghost city is generated in physical reality and
+                            expands into metaverse. You no longer discern the reality but we will you hints. Ghosts
+                            live, work and getting high next to you and they have everything you have: physical houses,
+                            things, pets, emotions and relationships and moreover for they continue living in
+                            materiality and absoluteness having access to both worlds. You can create the world and
+                            implement your very big desires in our ghost city. Join.
+                            Join.
+                        </div>
+                    </div>
+                </div>
+
+                <div id="smart_contract_button_flex_container">
+                    <img src="./img/buttons/smart_contract.svg" id="smart_contract_button" class="buttons">
+                </div>
+
+                <div id="footer_social_networks_flex_container">
+                    <a href="https://discord.gg/MQ6P3zQn">
+                        <img class="social_networks_img" src="./img/social_networks/discord.png">
+                    </a>
+
+                    <a href="#">
+                        <img class="social_networks_img" src="./img/social_networks/instagram.png">
+                    </a>
+
+                    <a href="https://twitter.com/SlandyGhost">
+                        <img class="social_networks_img" src="./img/social_networks/twitter.png">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./scripts/scroll_to.js"></script>
+    <script src="./scripts/roadmap_effects.js"></script>
+    <script src="./scripts/faq_effects.js"></script>
+    <script src="./scripts/score_management.js"></script>
+    <script src="./libs/wow_js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+
+        if (navigator.userAgent.indexOf("Trident") > -1) {
+            document.body.innerHTML = "The site may not display correctly in your browser. Please use other browsers. For example, Chrome or Firefox.";
+        }
+    </script>
+</body>
+
+</html>
